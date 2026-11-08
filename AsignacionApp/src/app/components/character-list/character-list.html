@@ -1,0 +1,24 @@
+<h2>Personajes de Dragon Ball</h2>
+
+@if (loading()) {
+  <p>Cargando personajes...</p>
+} @else {
+  <div class="cards-container">
+    @for (character of characters(); track character.id) {
+      <div class="card">
+        <div class="first-content">
+          <img [src]="character.image" [alt]="character.name" class="character-img" />
+          <span class="character-name">{{ character.name }}</span>
+        </div>
+
+        <div class="second-content">
+          <div class="details">
+            <h3>{{ character.name }}</h3>
+            <p><strong>Raza:</strong> {{ character.race }}</p>
+            <p><strong>Ki:</strong> {{ character.ki }}</p>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+}

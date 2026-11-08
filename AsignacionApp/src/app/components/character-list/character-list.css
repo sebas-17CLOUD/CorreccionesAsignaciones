@@ -1,0 +1,103 @@
+/* From Uiverse.io by suleymanlaarabidev (Adaptado) */
+
+/* Layout general para organizar las tarjetas en cuadrícula */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  width: 190px;
+  height: 254px;
+  background: rgb(103, 225, 255);
+  transition: all 0.4s;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  border-radius: 15px;
+  cursor: pointer;
+  transform: scale(1.1); /* Reducido ligeramente para evitar que choque fuera de pantalla */
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+  background: rgb(103, 151, 255);
+}
+
+/* PRIMER CONTENIDO: Cursor afuera (Imagen y Nombre) */
+.first-content {
+  height: 100%;
+  width: 100%;
+  transition: all 0.4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  border-radius: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.card:hover .first-content {
+  height: 0px;
+  opacity: 0;
+}
+
+.character-img {
+  max-height: 160px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.character-name {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #000;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* SEGUNDO CONTENIDO: Cursor encima (Detalles del personaje) */
+.second-content {
+  height: 0%;
+  width: 100%;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  transition: all 0.4s;
+  font-size: 0px;
+  transform: rotate(90deg) scale(-1);
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.card:hover .second-content {
+  opacity: 1;
+  height: 100%;
+  font-size: 1rem; /* Tamaño legible para los datos */
+  transform: rotate(0deg);
+}
+
+.details {
+  text-align: center;
+  color: #000;
+}
+
+.details h3 {
+  font-size: 1.2rem;
+  margin: 0 0 10px 0;
+  font-weight: 900;
+}
+
+.details p {
+  font-size: 0.9rem;
+  margin: 5px 0;
+  font-weight: bold;
+}
